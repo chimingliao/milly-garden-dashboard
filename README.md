@@ -1,7 +1,7 @@
 # Milly Garden Dashboard 🌱
 
 ![Project Status: Deployed](https://img.shields.io)
-[![Vercel Deployment](https://img.shields.io)](YOUR_VERCEL_URL_HERE)
+[![Vercel Deployment](https://img.shields.io)](milly-garden-dashboard.vercel.app)
 
 一个用于智能花园管理的交互式仪表板（例如，可以监控温度、湿度、光照）。
 
@@ -34,7 +34,7 @@
 
 1.  **克隆仓库**：
     ```bash
-    git clone https://github.com
+    git clone https://github.com/chimingliao/milly-garden-dashboard.git
     ```
 2.  **进入项目目录**：
     ```bash
