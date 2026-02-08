@@ -1,16 +1,19 @@
 # Milly Garden Dashboard 🌱
 
+<!-- 修正后的状态徽章链接 -->
 ![Project Status: Deployed](https://img.shields.io)
-[![Vercel Deployment](https://img.shields.io)](milly-garden-dashboard.vercel.app)
+<!-- 修正后的 Vercel 徽章链接，点击后跳转到你的网站 -->
+[![Vercel Deployment](https://img.shields.io)](https://milly-garden-dashboard.vercel.app)
 
 一个用于智能花园管理的交互式仪表板（例如，可以监控温度、湿度、光照）。
 
 # 项目截图
+<!-- 确保你已经把 milly-garden-dashboard-cover.png 推送到了项目根目录下的 /images 文件夹中 -->
 ![花园仪表板截图](./images/milly-garden-dashboard-cover.png)
 
 ## 🚀 线上预览 (Demo)
 
-点击这里访问部署好的网站：[https://your-vercel-url.com](https://your-vercel-url.com)
+点击这里访问部署好的网站：[https://milly-garden-dashboard.vercel.app](https://milly-garden-dashboard.vercel.app)
 
 ## ✨ 主要功能 (Features)
 
