@@ -3,46 +3,46 @@ import {
   Area, AreaChart, ResponsiveContainer, XAxis, YAxis, Line, LineChart
 } from 'recharts';
 import {
-  LayoutDashboard, Droplets, Thermometer, Sun,
-  Settings,
-  Sprout, Gauge,
+  LayoutDashboard, Droplets, Thermometer, Sun, Wind,
+  Settings, Lightbulb, Fan, Flame, CloudDrizzle,
+  Sprout, Waves, Gauge,
   Menu, Zap, Monitor, Moon, SunMedium, User,
   Cpu, X
 } from 'lucide-react';
 
 // ---------------------------------------------------------
-// 1. 多語言配置
+// 1. 多語言配置 (繁、簡、英、日)
 // ---------------------------------------------------------
 const DICT = {
   'zh-TW': {
-    brand: "MILLY GARDEN", version: "v2.5.0-MOBILE", mainTitle: "智能控制中心", subtitle: "即時環境數據管理核心",
+    brand: "MILLY GARDEN", version: "v2.5.1-PRO", mainTitle: "智能控制中心", subtitle: "即時環境數據與 AIOT 管理核心",
     dashboard: "監控總覽", analytics: "趨勢分析", settings: "系統設定",
     temp: "環境溫度", moisture: "土壤濕度", lux: "光照強度", co2: "二氧化碳",
     tab1: "核心設備", tab2: "氣候調節", butler: "智慧管家", lang: "語言", mode: "模式", theme: "配色",
-    k1: "白光燈", k2: "暖光燈", k3: "生長燈", k4: "新風", k5: "通風", k6: "加熱", k7: "加濕", k8: "自動澆灌",
-    admin: "管理員", dialogue1: "環境穩定。歡迎回來。", dialogue2: "水分略低，建議啟動澆灌。"
+    k1: "白光燈", k2: "暖光燈", k3: "生長燈", k4: "新風系統", k5: "通風系統", k6: "加熱技術", k7: "加濕技術", k8: "自動澆灌",
+    admin: "系統管理員", dialogue1: "環境穩定。歡迎回來，主人。", dialogue2: "水分略低，建議啟動澆灌。"
   },
   'zh-CN': {
-    brand: "MILLY GARDEN", version: "v2.5.0-MOBILE", mainTitle: "智能控制中心", subtitle: "实时环境数据管理核心",
+    brand: "MILLY GARDEN", version: "v2.5.1-PRO", mainTitle: "智能控制中心", subtitle: "实时环境数据与 AIOT 管理核心",
     dashboard: "监控总览", analytics: "趋势分析", settings: "系统设定",
     temp: "环境温度", moisture: "土壤湿度", lux: "光照强度", co2: "二氧化碳",
     tab1: "核心设备", tab2: "气候调节", butler: "智慧管家", lang: "语言", mode: "模式", theme: "配色",
-    k1: "白光灯", k2: "暖光灯", k3: "生长灯", k4: "新风", k5: "通风", k6: "加热", k7: "加湿", k8: "自动浇灌",
-    admin: "管理员", dialogue1: "环境稳定。欢迎回来。", dialogue2: "水分略低，建议启动浇灌。"
+    k1: "白光灯", k2: "暖光灯", k3: "生长灯", k4: "新风系统", k5: "通风系统", k6: "加热技术", k7: "加湿技术", k8: "自动浇灌",
+    admin: "系统管理员", dialogue1: "环境稳定。欢迎回来，主人。", dialogue2: "水分略低，建议启动浇灌。"
   },
   'en': {
-    brand: "MILLY GARDEN", version: "v2.5.0", mainTitle: "INTELLIGENCE HUB", subtitle: "Real-time Telemetry Hub",
-    dashboard: "Overview", analytics: "Analytics", settings: "Settings",
+    brand: "MILLY GARDEN", version: "v2.5.1", mainTitle: "INTELLIGENCE HUB", subtitle: "AIOT Environment Telemetry Hub",
+    dashboard: "Dashboard", analytics: "Analytics", settings: "Settings",
     temp: "Temp", moisture: "Moisture", lux: "Light", co2: "CO2",
-    tab1: "Core", tab2: "Climate", butler: "BUTLER", lang: "Language", mode: "Mode", theme: "Theme",
-    k1: "White", k2: "Warm", k3: "Grow", k4: "Air", k5: "Fan", k6: "Heat", k7: "Mist", k8: "Irrigation",
-    admin: "Admin", dialogue1: "System optimal. Welcome back.", dialogue2: "Soil dry. Suggest irrigation."
+    tab1: "Core Units", tab2: "Climate", butler: "INTELLIGENCE", lang: "Lang", mode: "Mode", theme: "Theme",
+    k1: "White Light", k2: "Warm Light", k3: "Grow Light", k4: "Air Exch.", k5: "Fan System", k6: "Heater", k7: "Fogger", k8: "Pump",
+    admin: "Admin", dialogue1: "System optimal. Welcome back, Master.", dialogue2: "Soil is dry. Suggesting irrigation."
   },
   'jp': {
-    brand: "MILLY GARDEN", version: "v2.5.0", mainTitle: "インテリジェンス・ハブ", subtitle: "環境監視と制御コア",
-    dashboard: "概要", analytics: "分析", settings: "設定",
-    temp: "温度", moisture: "湿度", lux: "照度", co2: "二酸化炭素",
-    tab1: "コア", tab2: "気候", butler: "執事", lang: "言語", mode: "モード", theme: "テーマ",
+    brand: "MILLY GARDEN", version: "v2.5.1", mainTitle: "インテリジェンス・ハブ", subtitle: "環境監視と AIOT 制御コア",
+    dashboard: "ダッシュボード", analytics: "分析", settings: "設定",
+    temp: "環境温度", moisture: "土壌水分", lux: "照度", co2: "二酸化炭素",
+    tab1: "コア設備", tab2: "気候制御", butler: "執事コア", lang: "言語", mode: "モード", theme: "テーマ",
     k1: "白色灯", k2: "暖色灯", k3: "育成灯", k4: "換気扇", k5: "循環ファン", k6: "ヒーター", k7: "加湿器", k8: "自動給水",
     admin: "管理者", dialogue1: "庭園は良好です。おかえりなさい。", dialogue2: "土が乾燥中。給水を推奨します。"
   }
@@ -56,13 +56,13 @@ const THEMES = {
 };
 
 const DISPLAY_MODES = {
-  dark: { name: 'Dark', icon: <Moon size={14} /> },
-  light: { name: 'Light', icon: <SunMedium size={14} /> },
-  glass: { name: 'Glass', icon: <Monitor size={14} /> },
+  dark: { name: 'Dark Mode', icon: <Moon size={14} /> },
+  light: { name: 'Light Mode', icon: <SunMedium size={14} /> },
+  glass: { name: 'Glass Mode', icon: <Monitor size={14} /> },
 };
 
 // ---------------------------------------------------------
-// 2. SVG 培養艙 (響應式高度調整)
+// 2. SVG 培養艙 (精緻 3D 質感)
 // ---------------------------------------------------------
 const BioPodSVG = ({ themeColor, displayMode }: any) => (
   <div className="relative w-full h-[300px] lg:h-[400px] flex items-center justify-center p-4">
@@ -90,11 +90,14 @@ const BioPodSVG = ({ themeColor, displayMode }: any) => (
   </div>
 );
 
+// ---------------------------------------------------------
+// 3. 主頁面組件
+// ---------------------------------------------------------
 export default function MillyGardenDashboard() {
   const [lang, setLang] = useState<keyof typeof DICT>('zh-TW');
   const [currentTheme, setCurrentTheme] = useState<keyof typeof THEMES>('emerald');
   const [displayMode, setDisplayMode] = useState<keyof typeof DISPLAY_MODES>('dark');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // 手機端側邊欄控制
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('group1');
   const [switches, setSwitches] = useState<Record<string, boolean>>({
     K1: false, K2: false, K3: true, K4: false, K5: true, K6: false, K7: false, K8: false
@@ -106,6 +109,22 @@ export default function MillyGardenDashboard() {
   const t = DICT[lang];
   const theme = THEMES[currentTheme];
   const stats = data[data.length - 1];
+
+  // 定義開關分組 (修復變數遺失問題)
+  const switchGroups = {
+    group1: [
+      { id: "K1", label: t.k1, icon: Lightbulb },
+      { id: "K2", label: t.k2, icon: Lightbulb },
+      { id: "K3", label: t.k3, icon: Sprout },
+      { id: "K4", label: t.k4, icon: Wind },
+    ],
+    group2: [
+      { id: "K5", label: t.k5, icon: Fan },
+      { id: "K6", label: t.k6, icon: Flame },
+      { id: "K7", label: t.k7, icon: CloudDrizzle },
+      { id: "K8", label: t.k8, icon: Waves },
+    ]
+  };
 
   useEffect(() => {
     const itv = setInterval(() => {
@@ -124,7 +143,12 @@ export default function MillyGardenDashboard() {
   return (
     <div className={`flex flex-col lg:flex-row h-screen w-full font-sans overflow-hidden transition-all duration-700 ${styles.bg} ${styles.text}`}>
 
-      {/* 1. 移動端頂部列 */}
+      <style>{`
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .animate-float { animation: float ease-in-out infinite 3s; }
+      `}</style>
+
+      {/* 手機端頂部列 */}
       <div className="lg:hidden flex items-center justify-between p-4 border-b border-zinc-800 shrink-0">
         <div className="flex items-center gap-2">
           <Sprout size={20} className="text-emerald-500" />
@@ -133,7 +157,7 @@ export default function MillyGardenDashboard() {
         <button onClick={() => setIsSidebarOpen(true)}><Menu size={24} /></button>
       </div>
 
-      {/* 2. 側邊欄 (支援響應式抽屜) */}
+      {/* 側邊欄 */}
       <aside className={`
         fixed inset-y-0 left-0 z-50 w-64 transform transition-transform duration-300 lg:relative lg:translate-x-0
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
@@ -151,36 +175,37 @@ export default function MillyGardenDashboard() {
         </div>
         <nav className="flex-1 p-4 space-y-2">
           {[{ icon: <LayoutDashboard size={18} />, label: t.dashboard, active: true }, { icon: <Gauge size={18} />, label: t.analytics }, { icon: <Settings size={18} />, label: t.settings }].map((item, i) => (
-            <div key={i} className={`flex items-center gap-3 px-4 py-3 rounded-2xl cursor-pointer ${item.active ? 'bg-zinc-800 text-white' : 'text-zinc-500'}`}>
+            <div key={i} className={`flex items-center gap-3 px-4 py-3 rounded-2xl cursor-pointer ${item.active ? 'bg-zinc-800 text-white shadow-xl' : 'text-zinc-500'}`}>
               {item.icon} <span className="text-sm font-bold uppercase">{item.label}</span>
             </div>
           ))}
         </nav>
         <div className="p-6 border-t border-zinc-800/10 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center border border-white/5"><User size={20} className="opacity-40" /></div>
+          <div className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center border border-white/5 text-white"><User size={20} className="opacity-40" /></div>
           <div className="flex-1 overflow-hidden font-black uppercase text-[10px]">VINCENT<p className="text-[8px] opacity-40">{t.admin}</p></div>
         </div>
       </aside>
 
-      {/* 3. 主要內容區 */}
-      <main className="flex-1 flex flex-col min-w-0 h-full overflow-y-auto lg:overflow-hidden p-4 lg:p-8 relative">
+      {/* 主要內容區 */}
+      <main className="flex-1 flex flex-col h-full overflow-y-auto lg:overflow-hidden p-4 lg:p-8 relative">
         <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 shrink-0">
           <div className="hidden sm:block">
             <h1 className="text-3xl lg:text-4xl font-black tracking-tighter uppercase italic leading-none">{t.mainTitle}</h1>
             <p className="text-zinc-500 text-[10px] font-bold uppercase mt-2 tracking-widest italic opacity-60">{t.subtitle}</p>
           </div>
+
           <div className="flex flex-wrap gap-2 w-full sm:w-auto">
-            <div className="flex bg-zinc-900 border border-zinc-800 rounded-xl p-1 shrink-0 shadow-2xl">
+            <div className="flex bg-zinc-900 border border-zinc-800 rounded-xl p-1 shrink-0">
               {['zh-TW', 'zh-CN', 'en', 'jp'].map(l => (
                 <button key={l} onClick={() => setLang(l as any)} className={`px-2 py-1 text-[9px] font-black rounded ${lang === l ? 'bg-zinc-800 text-white' : 'text-zinc-600'}`}>{l.toUpperCase().substring(0, 2)}</button>
               ))}
             </div>
-            <div className="flex bg-zinc-900 border border-zinc-800 rounded-xl p-1 shrink-0 shadow-2xl">
+            <div className="flex bg-zinc-900 border border-zinc-800 rounded-xl p-1 shrink-0">
               {Object.entries(THEMES).map(([k, v]) => (
-                <button key={k} onClick={() => setCurrentTheme(k as any)} className={`w-5 h-5 rounded-md m-0.5 ${currentTheme === k ? 'ring-2 ring-white' : 'opacity-40'}`} style={{ backgroundColor: v.chart }} />
+                <button key={k} onClick={() => setCurrentTheme(k as any)} className={`w-5 h-5 rounded-md m-0.5 ${currentTheme === k ? 'ring-2 ring-white scale-110' : 'opacity-40'}`} style={{ backgroundColor: v.chart }} />
               ))}
             </div>
-            <div className="flex bg-zinc-900 border border-zinc-800 rounded-xl p-1 shrink-0 shadow-2xl">
+            <div className="flex bg-zinc-900 border border-zinc-800 rounded-xl p-1 shrink-0">
               {Object.entries(DISPLAY_MODES).map(([k, v]) => (
                 <button key={k} onClick={() => setDisplayMode(k as any)} className={`p-1 px-2 text-zinc-500 ${displayMode === k ? 'text-white' : ''}`}>{v.icon}</button>
               ))}
@@ -188,18 +213,18 @@ export default function MillyGardenDashboard() {
           </div>
         </header>
 
-        {/* 數據卡片 (響應式欄位) */}
+        {/* 數據卡片 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 shrink-0">
           {[{ l: t.temp, v: stats.temp, u: '℃', i: Thermometer }, { l: t.moisture, v: stats.moisture, u: '%', i: Droplets }, { l: t.lux, v: stats.lux, u: 'Lux', i: Sun }, { l: t.co2, v: stats.co2, u: 'ppm', i: Zap }].map((s, i) => (
             <div key={i} className={`${styles.card} p-5 rounded-3xl flex items-center justify-between`}>
-              <div><p className="text-[9px] font-black uppercase opacity-30 mb-1">{s.l}</p><p className="text-xl lg:text-2xl font-black tracking-tighter leading-none">{s.v.toFixed(1)} <span className="text-[10px] opacity-20">{s.u}</span></p></div>
+              <div><p className="text-[9px] font-black uppercase opacity-30 mb-1">{s.l}</p><p className="text-xl lg:text-2xl font-black leading-none">{s.v.toFixed(1)} <span className="text-[10px] opacity-20 uppercase">{s.u}</span></p></div>
               <s.i size={20} style={{ color: theme.chart }} />
             </div>
           ))}
         </div>
 
-        {/* 圖表網格 (響應式高度與佈局) */}
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 grid-rows-none lg:grid-rows-2 gap-4 min-h-[600px] lg:min-h-0 mb-6">
+        {/* 圖表網格 */}
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 grid-rows-none lg:grid-rows-2 gap-4 min-h-[500px] lg:min-h-0 mb-6">
           <div className={`${styles.card} col-span-1 lg:col-span-2 row-span-1 lg:row-span-2 rounded-[3.5rem] p-6 lg:p-10 flex flex-col relative overflow-hidden`}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data}><defs><linearGradient id="mainG" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={theme.chart} stopOpacity={0.2} /><stop offset="95%" stopColor={theme.chart} stopOpacity={0} /></linearGradient></defs><Area type="monotone" dataKey="moisture" stroke={theme.chart} strokeWidth={4} fill="url(#mainG)" isAnimationActive={true} /><XAxis dataKey="time" hide /><YAxis hide domain={['dataMin-5', 'dataMax+5']} /></AreaChart>
@@ -215,7 +240,7 @@ export default function MillyGardenDashboard() {
           </div>
         </div>
 
-        {/* 分頁控制 (響應式欄位) */}
+        {/* 控制開關 */}
         <div className="shrink-0 space-y-4">
           <div className="flex gap-6 border-b border-zinc-800 pb-2">
             {['group1', 'group2'].map(gid => (
@@ -236,7 +261,7 @@ export default function MillyGardenDashboard() {
         </div>
       </main>
 
-      {/* 4. 右側管家 (手機端縮小顯示) */}
+      {/* 右側管家 */}
       <aside className={`w-full lg:w-[320px] h-auto lg:h-full flex flex-col border-l ${styles.sidebar} shrink-0`}>
         <div className="hidden lg:flex h-20 border-b border-zinc-800/10 items-center px-10 gap-3">
           <Cpu size={18} className="text-zinc-600 animate-pulse" />
