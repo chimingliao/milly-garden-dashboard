@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
-  Area, AreaChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Line, LineChart
+  Area, AreaChart, ResponsiveContainer, XAxis, YAxis, Line, LineChart
 } from 'recharts';
 import {
-  LayoutDashboard, Droplets, Thermometer, Sun, Wind,
-  Settings, Lightbulb, Fan, Flame, CloudDrizzle,
-  Sprout, Waves, Gauge, Power, Check, ChevronDown, Palette,
-  ChevronLeft, Menu, Activity, Zap, Monitor, Moon, SunMedium, User,
-  Atom, Globe, Cpu, X
+  LayoutDashboard, Droplets, Thermometer, Sun,
+  Settings,
+  Sprout, Gauge,
+  Menu, Zap, Monitor, Moon, SunMedium, User,
+  Cpu, X
 } from 'lucide-react';
 
 // ---------------------------------------------------------
