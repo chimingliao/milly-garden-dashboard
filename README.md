@@ -1,74 +1,59 @@
-# React + TypeScript + Vite
+# Milly Garden Dashboard 🌱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Status: Deployed](https://img.shields.io)
+[![Vercel Deployment](https://img.shields.io)](YOUR_VERCEL_URL_HERE)
 
-Currently, two official plugins are available:
+一个用于智能花园管理的交互式仪表板（例如，可以监控温度、湿度、光照）。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 线上预览 (Demo)
 
-## React Compiler
+点击这里访问部署好的网站：[https://your-vercel-url.com](https://your-vercel-url.com)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ 主要功能 (Features)
 
-## Expanding the ESLint configuration
+*   **实时数据**：显示温度、湿度、光照等传感器数据。
+*   **美观界面**：使用 `recharts` 和 `lucide-react` 构建的现代化 UI。
+*   **响应式设计**：支持在不同设备上查看。
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ 技术栈 (Tech Stack)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   **框架**：React.js (with Vite)
+*   **语言**：TypeScript
+*   **UI 组件**：Tailwind CSS (如果使用)
+*   **图表库**：Recharts
+*   **图标**：Lucide React
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📦 本地运行步骤 (Installation)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+如果你想在本地运行这个项目，请按照以下步骤操作：
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**先决条件**：确保已安装 [Node.js](https://nodejs.org) 和 [Git](https://git-scm.com)。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **克隆仓库**：
+    ```bash
+    git clone https://github.com
+    ```
+2.  **进入项目目录**：
+    ```bash
+    cd milly-garden-dashboard
+    ```
+3.  **安装依赖**：
+    ```bash
+    npm install
+    # 或者使用 yarn install
+    ```
+4.  **启动开发服务器**：
+    ```bash
+    npm run dev
+    # 或者使用 yarn dev
+    ```
+    应用将在 `http://localhost:3000` 运行。
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-"# milly-garden-dashboard" 
+## 📝 许可证 (License)
+
+本项目采用 MIT 许可证，详情请查看 `LICENSE` 文件。
+
+---
+<div align="center">
+  由 chimingliao 维护
+</div>
