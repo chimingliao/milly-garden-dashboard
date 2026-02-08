@@ -53,7 +53,7 @@
     npm run dev
     # 或者使用 yarn dev
     ```
-    应用将在 `http://localhost:3000` 运行。
+    应用将在 `http://localhost:5173` 运行。
 
 ## 📝 许可证 (License)
 
